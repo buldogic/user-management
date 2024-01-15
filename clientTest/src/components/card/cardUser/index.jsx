@@ -4,6 +4,7 @@ import { fetchUsers, userActions} from "../../../store/usersSlice";
 import style from "./index.module.css";
 import { Link } from "react-router-dom";
 import { Button } from "../../button";
+import userImg from '../../../../public/img/userdef.svg'
 
 const CardUsers = () => {
   const users = useSelector((state) => state.users.users);
@@ -25,7 +26,7 @@ const CardUsers = () => {
             <div className={style.userAvatar}>
               <img
               className={style.img}
-                src={user.img || "../../../../public/img/userdef.svg"}
+                src={user.img || userImg}
                 alt={`${user.name}'s Avatar`}
               />
             </div>

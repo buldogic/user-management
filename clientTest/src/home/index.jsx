@@ -1,4 +1,7 @@
 import style from "./index.module.css";
+import bk from '../../public/img/bk.png'
+import users from '../../public/img/users.png'
+import form from '../../public/img/form.png'
 
 const Home = () => {
   return (
@@ -6,17 +9,17 @@ const Home = () => {
       <h1>Резюме проекта "Управление пользователями":</h1>
     <img
       className={style.img}
-      src="http://localhost:5173/public/img/bk.png"
+      src={bk}
       alt="Скриншот бэкенда"
     />
     <img
       className={style.img}
-      src="../../public/img/img/Снимок экрана 2024-01-15 в 23.52.54.png"
+      src={users}
       alt="Скриншот фронтенда"
     />
     <img
       className={style.img}
-      src="../../public/img/Снимок экрана 2024-01-15 в 23.53.02.png"
+      src={form}
       alt="Скриншот фронтенда"
     />
       <section>
