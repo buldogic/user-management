@@ -1,21 +1,22 @@
 import style from "./index.module.css";
+
 const Home = () => {
   return (
     <>
       <h1>Резюме проекта "Управление пользователями":</h1>
     <img
       className={style.img}
-      src="public/img/bk.png"
+      src="../../public/img/bk.png"
       alt="Скриншот бэкенда"
     />
     <img
       className={style.img}
-      src="public/img/Снимок экрана 2024-01-15 в 23.52.54.png"
+      src="../../public/img/img/Снимок экрана 2024-01-15 в 23.52.54.png"
       alt="Скриншот фронтенда"
     />
     <img
       className={style.img}
-      src="public/img/Снимок экрана 2024-01-15 в 23.53.02.png"
+      src="../../public/img/Снимок экрана 2024-01-15 в 23.53.02.png"
       alt="Скриншот фронтенда"
     />
       <section>
