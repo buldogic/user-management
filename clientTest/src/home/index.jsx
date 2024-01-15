@@ -6,7 +6,7 @@ const Home = () => {
       <h1>Резюме проекта "Управление пользователями":</h1>
     <img
       className={style.img}
-      src="../../public/img/bk.png"
+      src="http://localhost:5173/public/img/bk.png"
       alt="Скриншот бэкенда"
     />
     <img
