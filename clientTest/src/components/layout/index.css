@@ -1,0 +1,60 @@
+.container {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+.header-container{
+  margin: 10px;
+  font-size: 1.5em;
+  padding: 10px;
+  padding-left: 60px;
+  border-bottom: 1px solid #dee2e6;
+
+
+}
+
+.header-container :first-child {
+  margin-right: 10px;
+}
+.header-name-page{
+
+}
+.header-text{
+  text-decoration: none;
+  color: rgb(180, 180, 180);
+  font-family:'Roboto', sans-serif;;
+}
+
+
+
+
+
+.sidebar {
+  padding: 10px;
+  width: 200px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: rgb(174, 171, 171);
+  font-size: 1.5em;
+}
+
+.active {
+  color:rgb(92, 166, 231);
+}
+
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}

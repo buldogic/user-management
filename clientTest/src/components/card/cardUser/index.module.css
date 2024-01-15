@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 25px;
+}
+
+.usersCard {
+  display: flex;
+  width: 200px;
+  height: 300px;
+  box-sizing: border-box;
+  border: 1px solid silver;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: aliceblue;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.userAvatar {
+  padding: 10px;
+}
+
+.userText {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  margin: 5px;
+}
+
+.text {
+  color: aliceblue;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  margin-top: 10px;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.span {
+  margin-left: 10px;
+  margin-right: 10px;
+}
