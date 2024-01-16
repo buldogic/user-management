@@ -1,0 +1,44 @@
+.container{
+  display: flex;
+
+}
+
+.containerUl{
+  width: 300px;
+  height: 650px;
+  border-right: 1px solid aliceblue;
+}
+
+.liText{
+  margin: 15px;
+}
+
+.link{
+  text-decoration: none;
+  color: aliceblue;
+  cursor: pointer;
+  padding: 5px;
+
+
+}
+.link:hover {
+  color: antiquewhite;
+}
+
+.active{
+  color: #fff; 
+  border-bottom: 1px solid aliceblue;
+  border-radius: 5px;
+}
+
+.liText{
+  display: block;
+  margin-top: 10px;
+}
+
+.containerGrapf{
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  flex-grow: 1;
+}

@@ -25,7 +25,6 @@ const style = {
 
 const RadialBarChartExample = () => {
   return (
-    <div style={{ width: "600px", height: "600px" }}>
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           cx="50%"
@@ -50,7 +49,6 @@ const RadialBarChartExample = () => {
           />
         </RadialBarChart>
       </ResponsiveContainer>
-    </div>
   );
 };
 

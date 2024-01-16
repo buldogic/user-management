@@ -16,7 +16,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="statistics/*" element={<Statistics />} >
-        <Route path="example" element={<Example />} />
+        <Route path="example" exact element={<Example />} />
         <Route path="radialExample" element={<RadialBarChartExample />}/>
 
         </Route>
