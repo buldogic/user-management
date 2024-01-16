@@ -58,7 +58,7 @@ app.get("/api/user/:id", async function (req, res) {
   try {
     const { id } = req.params;
     const userRes = await client.query(
-      "SELECT id, name, surname, email, date, imj, patronymic FROM test.user_data WHERE id = $1",
+      "SELECT id, name, surname, email, date, imj, patronymic FROM user_data WHERE id = $1",
       [id]
     );
     res.send(userRes.rows[0]);
@@ -72,7 +72,7 @@ app.post("/api/users/add", async function (req, res) {
   const { name, surname, email, date, imj, patronymic } = req.body;
   try {
     const userNew = await client.query(
-      "INSERT INTO test.user_data (name, surname, email, date, imj, patronymic) VALUES ($1, $2, $3, $4, $5, $6) returning id",
+      "INSERT INTO user_data (name, surname, email, date, imj, patronymic) VALUES ($1, $2, $3, $4, $5, $6) returning id",
       [name, surname, email, date, imj, patronymic]
     );
     res.send(userNew);
@@ -86,7 +86,7 @@ app.put("/api/user/:id", async function (req, res) {
   const { id } = req.params;
   const { name, surname, email, date, imj, patronymic } = req.body;
   const userUpdate = await client.query(
-    "UPDATE test.user_data SET name = $2, surname = $3, email = $4, date = $5, imj = $6, patronymic = $7 WHERE id = $1",
+    "UPDATE user_data SET name = $2, surname = $3, email = $4, date = $5, imj = $6, patronymic = $7 WHERE id = $1",
     [id, name, surname, email, date, imj, patronymic]
   );
   res.send(userUpdate.rows);
