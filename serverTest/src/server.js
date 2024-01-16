@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import pkg from "pg";
+import morgan from "morgan";
 
-const port = 8000;
+const PORT = 8000;
 
 const corsOptions = {
   origin: "*",
@@ -19,34 +20,37 @@ app.use(express.json());
 const { Client } = pkg;
 
 const client = new Client({
-  user: "andreyafonin",
-  password: "postgres",
-  database: "test",
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST
 });
 
 const LIMIT = 5;
 
+app.use(morgan('tiny'))
+
 app.get("/api/user", async function (req, res) {
-  const { page, filterName, filterValue } = req.query;
+  const { page = 0, filterName, filterValue } = req.query;
   const isValid = ["email", "name", "surname"].includes(filterName);
   const hasValue = Boolean(filterValue)
   let userRes;
   let countUser;
   if (isValid && hasValue) {
     userRes = await client.query(
-      `SELECT * FROM test.user_data WHERE ${filterName} = $3 ORDER BY id ASC LIMIT $1  OFFSET $2 `,
+      `SELECT * FROM user_data WHERE ${filterName} = $3 ORDER BY id ASC LIMIT $1  OFFSET $2 `,
       [LIMIT, page * LIMIT, filterValue]
     );
-    countUser = await client.query(`SELECT COUNT(id) FROM test.user_data WHERE ${filterName} = $1`,
-    [filterValue]);
+    countUser = await client.query(`SELECT COUNT(id) FROM user_data WHERE ${filterName} = $1`,
+      [filterValue]);
   } else {
     userRes = await client.query(
-      "SELECT * FROM test.user_data ORDER BY id ASC LIMIT $1  OFFSET $2 ",
+      "SELECT * FROM user_data ORDER BY id ASC LIMIT $1  OFFSET $2 ",
       [LIMIT, page * LIMIT]
     );
-    countUser = await client.query("SELECT COUNT(id) FROM test.user_data");
+    countUser = await client.query("SELECT COUNT(id) FROM user_data");
   }
-  res.send({users: userRes.rows, count: countUser.rows[0].count, limit: LIMIT });
+  res.send({ users: userRes.rows, count: countUser.rows[0].count, limit: LIMIT });
 });
 
 
@@ -88,9 +92,9 @@ app.put("/api/user/:id", async function (req, res) {
   res.send(userUpdate.rows);
 });
 
-app.listen(port, async function () {
+app.listen(PORT, async function () {
   await client.connect();
-  console.log("Example app listening on port 8080!");
+  console.log(`Example app listening on port ${PORT}!`);
 });
 
 process.on("exit", async function () {

@@ -1,8 +1,16 @@
-version: '3'
+version: "3"
 
+services:
   postgres:
-    image: postgres:latest
+    container_name: user-managment-db
+    image: postgres:16-alpine
+    restart: always
+    ports:
+      - "${DB_HOST}:5432:5432"
     environment:
-      POSTGRES_USER: andreyafonin
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: test
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+      PGDATA: /data/postgres
+    command: ["postgres", "-c", "log_statement=all"]
