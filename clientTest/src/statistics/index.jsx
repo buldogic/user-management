@@ -42,7 +42,7 @@ export const Statistics = () => {
         </ul>
       </div>
       <div className={style.containerGrapf}>
-        <Outlet />
+        { !isActive1 && !isActive2 ? <h2 style={{textAlign: 'center', marginTop: '300px'}}>Выберете график</h2>  : <Outlet/> }
       </div>
     </div>
   );
