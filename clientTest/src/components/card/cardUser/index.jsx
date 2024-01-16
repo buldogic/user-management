@@ -14,7 +14,7 @@ const CardUsers = () => {
 
   useEffect(() => {
     dispatch(fetchUsers());
-  }, []);
+  }, [pages]);
 
 
   return (
