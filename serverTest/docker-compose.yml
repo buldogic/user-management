@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+       command: >
+      sh -c "npm ci && npm run migrate && npm run dev"
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: andreyafonin
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: test
