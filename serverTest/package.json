@@ -7,6 +7,7 @@
     "pg-promise": "^11.5.4"
   },
   "scripts": {
+    "docer": "docker compose up -d",
     "migrate-create": "npx sequelize-cli migration:generate --name your-migration-name",
     "migrate": "npx sequelize-cli db:migrate",
     "dev": "node --watch src/server.js"
