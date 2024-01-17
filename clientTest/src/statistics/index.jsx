@@ -8,12 +8,12 @@ export const Statistics = () => {
 
   const handleClick1 = () => {
     setIsActive1(true);
-    setIsActive2(false); // Убедимся, что второй элемент неактивен
+    setIsActive2(false); 
   };
 
   const handleClick2 = () => {
     setIsActive2(true);
-    setIsActive1(false); // Убедимся, что первый элемент неактивен
+    setIsActive1(false); 
   };
 
   return (
